@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.kwang0.tutorialapp.R;
 
+//ReactiveX Java
 public class RxJavaActivity extends AppCompatActivity {
 
     @Override
