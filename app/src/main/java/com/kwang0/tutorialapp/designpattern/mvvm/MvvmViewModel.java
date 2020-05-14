@@ -99,7 +99,6 @@ public class MvvmViewModel extends BaseObservable implements ViewModel {
                 if(model.isPlaying()) {
                     model.move((int) event.getX(), (int) event.getY());
                 }
-                System.out.println("work??");
                 notifyPropertyChanged(BR.model);
                 return true;
             }
