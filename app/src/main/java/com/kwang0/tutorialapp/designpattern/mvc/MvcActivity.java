@@ -78,8 +78,6 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if(v.getId() == R.id.d_p_view) {
-            Log.d("mvc", "x : " + view.getX());
-            Log.d("mvc", "y : " + view.getY());
             if((event.getX() >= 0 &&
                         event.getX() <= view.getWidth() - square_view.getWidth())
                     && (event.getY() >= 0 &&
@@ -92,10 +90,6 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
         return true;
     }
 
-    private void getCenter() {
-        centerX = (int) square_view.getX();
-        centerY = (int) square_view.getY();
-    }
     private void start() {
         getCenter();
         model.start();
@@ -120,7 +114,20 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
     }
     private void moveCenter() {
         model.move(centerX, centerY);
+
+        Log.d("work??", "x : " + centerX);
+        Log.d("work??", "y : " + centerY);
         moveSquare();
+    }
+
+    private void moveSquare() {
+        square_view.setX((float) model.getX());
+        square_view.setY((float) model.getY());
+    }
+
+    private void getCenter() {
+        centerX = (int) square_view.getX();
+        centerY = (int) square_view.getY();
     }
 
     @SuppressLint("SetTextI18n")
@@ -129,7 +136,7 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
     }
     @SuppressLint("SetTextI18n")
     private void setXYText(int x, int y) {
-        tv.setText("X : " + model.getX() + ", Y : " + model.getY());
+        tv.setText("X : " + x + ", Y : " + y);
     }
 
     private void startVISIBLE() {
@@ -139,10 +146,5 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
     private void stopVISIBLE() {
         start.setVisibility(View.GONE);
         stop.setVisibility(View.VISIBLE);
-    }
-
-    private void moveSquare() {
-        square_view.setX((float) model.getX());
-        square_view.setY((float) model.getY());
     }
 }

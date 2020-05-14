@@ -1,18 +1,24 @@
 package com.kwang0.tutorialapp.designpattern.mvvm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
 import com.kwang0.tutorialapp.R;
-import com.kwang0.tutorialapp.designpattern.DPModel;
+import com.kwang0.tutorialapp.databinding.ActivityMvvmBinding;
+
+import kotlin.jvm.JvmStatic;
 
 public class MvvmActivity extends AppCompatActivity {
-    private DPModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mvvm);
+        ActivityMvvmBinding mBinding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm);
+        mBinding.setViewModel(new MvvmViewModel());
+        mBinding.executePendingBindings();
     }
+
 }

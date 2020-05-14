@@ -24,36 +24,24 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rv;
 
-    private List<MainRVContents> mList;
-    private MainRVAdapter mAdapter;
-
-    private void mainActContentsInit() {
-        rv = (RecyclerView) findViewById(R.id.main_recycler);
-    }
-
-    private void mainProcessInit() {
-        mList = new ArrayList<MainRVContents>();
-        mAdapter = new MainRVAdapter(MainActivity.this, mList);
-        rv.setHasFixedSize(true);
-        ((SimpleItemAnimator) Objects.requireNonNull(rv.getItemAnimator())).setSupportsChangeAnimations(false);
-        rv.setNestedScrollingEnabled(false);
-        rv.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.VERTICAL, false));
-        rv.setAdapter(mAdapter);
-
-    }
+    private TitleView titleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainActContentsInit();
-        mainProcessInit();
+        titleView = new TitleView(MainActivity.this);
+        titleView.bindView(MainActivity.this);
+        titleView.recyclerInit();
 
-        mList.add(new MainRVContents("디자인 패턴"));
-        mList.add(new MainRVContents("언어"));
-        mList.add(new MainRVContents("자바8"));
-        mList.add(new MainRVContents("비동기처리"));
+        List<TitleModel> mList = titleView.getmList();
+        TitleAdapter mAdapter = titleView.getmAdapter();
+
+        mList.add(new TitleModel("디자인 패턴"));
+        mList.add(new TitleModel("언어"));
+        mList.add(new TitleModel("자바8"));
+        mList.add(new TitleModel("비동기처리"));
         mAdapter.notifyDataSetChanged();
     }
 

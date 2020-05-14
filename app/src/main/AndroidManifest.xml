@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CodeViewerActivity"></activity>
+        <activity android:name=".javaE.stream.StreamActivity"/>
+        <activity android:name=".async.coroutines.CoroutinesActivity" />
+        <activity android:name=".async.asynctask.AsyncTaskActivity" />
+        <activity android:name=".async.AsyncActivity" />
         <activity android:name=".async.rxJava.RxJavaActivity" />
         <activity android:name=".language.kotlin.KotlinActivity" />
         <activity android:name=".javaE.JavaEActivity" />

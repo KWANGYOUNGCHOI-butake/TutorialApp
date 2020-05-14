@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".designpattern.DPActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/d_p_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <include layout="@layout/reuse_rv"/>
 
 </RelativeLayout>

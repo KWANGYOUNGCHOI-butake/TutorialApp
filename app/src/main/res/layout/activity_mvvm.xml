@@ -1,16 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".designpattern.mvvm.MvvmActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include layout="@layout/activity_d_p_tv"/>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.kwang0.tutorialapp.designpattern.mvvm.MvvmViewModel" />
+    </data>
 
-    <include layout="@layout/activity_d_p_linear"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".designpattern.mvvm.MvvmActivity">
 
-    <include layout="@layout/activity_d_p_view"/>
 
-</RelativeLayout>
+        <TextView android:id="@+id/mvvm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:textSize="@dimen/textSmall"
+            android:textColor="@color/colorBlack"
+            android:padding="@dimen/bigPadding"
+            android:gravity="start|center"
+            app:stringResult="@{viewModel.model}"/>
+
+        <LinearLayout
+            android:id="@+id/mvvm_linear"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/mvvm_tv">
+
+            <Button
+                android:id="@+id/mvvm_linear_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/d_p_start"
+                android:onClick="@{() -> viewModel.start(mvvmSquareView)}"
+                android:visibility="@{viewModel.model.playing ? View.GONE : View.VISIBLE}"/>
+            <Button
+                android:id="@+id/mvvm_linear_stop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/d_p_stop"
+                android:onClick="@{() -> viewModel.stop()}"
+                android:visibility="@{viewModel.model.playing ? View.VISIBLE : View.GONE}"/>
+            <Button
+                android:id="@+id/mvvm_linear_reset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/d_p_reset"
+                android:onClick="@{() -> viewModel.reset()}"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/mvvm_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/mvvm_linear"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@color/colorPrimaryDark"
+            app:touchListener="@{viewModel.onTouchListener}">
+            <View
+                android:id="@+id/mvvm_square_view"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerInParent="true"
+                android:background="@color/colorAccent"
+                app:moveSquare="@{viewModel.model}"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

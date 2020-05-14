@@ -10,13 +10,6 @@ public class DPModel {
         isFinished = true;
     }
 
-    public DPModel(int x, int y) {
-        isPlaying = false;
-        isFinished = true;
-        this.x = x;
-        this.y = y;
-    }
-
     public void start() {
         isPlaying = true;
         isFinished = false;
@@ -30,7 +23,7 @@ public class DPModel {
         isFinished = true;
     }
     public void move(int x, int y) {
-        if(isPlaying) {
+        if(!isFinished) {
             this.x = x;
             this.y = y;
         }
