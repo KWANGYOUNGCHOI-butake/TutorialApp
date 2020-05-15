@@ -35,8 +35,8 @@ public class LanguageActivity extends AppCompatActivity {
         List<TitleModel> mList = titleView.getmList();
         TitleAdapter mAdapter = titleView.getmAdapter();
 
-        mList.add(new TitleModel("자바"));
-        mList.add(new TitleModel("코틀린"));
+        mList.add(new TitleModel("Java"));
+        mList.add(new TitleModel("Kotlin"));
         mAdapter.notifyDataSetChanged();
     }
 }

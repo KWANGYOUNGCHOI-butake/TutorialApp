@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.kwang0.tutorialapp.R;
 
-public class StreamActivity extends AppCompatActivity {
+public class StreamReductionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stream);
+        setContentView(R.layout.activity_stream_reduction);
     }
 }

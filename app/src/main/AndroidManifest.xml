@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".javaE.optional.OptionalActivity"></activity>
-        <activity android:name=".javaE.stream.StreamActivity" />
+        <activity android:name=".javaE.optional.OptionalActivity" />
+        <activity android:name=".javaE.stream.StreamCollectActivity"/>
+        <activity android:name=".javaE.stream.StreamReductionActivity" />
         <activity android:name=".async.coroutines.CoroutinesActivity" />
         <activity android:name=".async.asynctask.AsyncTaskActivity" />
         <activity android:name=".async.AsyncActivity" />

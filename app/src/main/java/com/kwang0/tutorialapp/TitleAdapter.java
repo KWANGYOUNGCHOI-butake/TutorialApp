@@ -19,7 +19,9 @@ import com.kwang0.tutorialapp.designpattern.mvc.MvcActivity;
 import com.kwang0.tutorialapp.designpattern.mvp.MvpActivity;
 import com.kwang0.tutorialapp.designpattern.mvvm.MvvmActivity;
 import com.kwang0.tutorialapp.javaE.JavaEActivity;
-import com.kwang0.tutorialapp.javaE.stream.StreamActivity;
+import com.kwang0.tutorialapp.javaE.optional.OptionalActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamCollectActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamReductionActivity;
 import com.kwang0.tutorialapp.language.LanguageActivity;
 import com.kwang0.tutorialapp.language.java.JavaActivity;
 import com.kwang0.tutorialapp.language.kotlin.KotlinActivity;
@@ -94,7 +96,13 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                 } else if(mContext instanceof JavaEActivity) {
                     switch (position) {
                         case 0:
-                            mContext.startActivity(new Intent(mContext, StreamActivity.class));
+                            mContext.startActivity(new Intent(mContext, OptionalActivity.class));
+                            break;
+                        case 1:
+                            mContext.startActivity(new Intent(mContext, StreamCollectActivity.class));
+                            break;
+                        case 2:
+                            mContext.startActivity(new Intent(mContext, StreamReductionActivity.class));
                             break;
                     }
                 } else if(mContext instanceof AsyncActivity) {

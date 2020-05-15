@@ -31,7 +31,9 @@ public class JavaEActivity extends AppCompatActivity {
         List<TitleModel> mList = titleView.getmList();
         TitleAdapter mAdapter = titleView.getmAdapter();
 
-        mList.add(new TitleModel("스트림"));
+        mList.add(new TitleModel("Optional"));
+        mList.add(new TitleModel("Stream - collect"));
+        mList.add(new TitleModel("Stream - reduction"));
         mAdapter.notifyDataSetChanged();
     }
 }
