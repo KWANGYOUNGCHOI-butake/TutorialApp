@@ -11,7 +11,7 @@ class KotlinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
 
-        val tv : TextView = findViewById(R.id.kotlin_tv)
+        val tv : TextView = findViewById(R.id.reuse_scroll_tv)
 
         val sb = StringBuilder()
         sb.append("Hi, Kotlin!").appendln()

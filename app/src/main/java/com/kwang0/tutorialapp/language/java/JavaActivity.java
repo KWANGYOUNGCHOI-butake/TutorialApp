@@ -15,7 +15,7 @@ public class JavaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java);
 
-        TextView tv = (TextView) findViewById(R.id.java_tv);
+        TextView tv = (TextView) findViewById(R.id.reuse_scroll_tv);
 
         StringBuilder sb = new StringBuilder();
         sb.append("Hi, Java!").append("\n");

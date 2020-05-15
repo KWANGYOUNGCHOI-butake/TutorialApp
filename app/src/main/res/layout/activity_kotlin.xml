@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".language.kotlin.KotlinActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/kotlin_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/textSmall"
-            android:textColor="@color/colorBlack"
-            android:padding="@dimen/bigPadding"/>
-
-    </ScrollView>
+    <include layout="@layout/reuse_scroll"/>
 
 </RelativeLayout>
