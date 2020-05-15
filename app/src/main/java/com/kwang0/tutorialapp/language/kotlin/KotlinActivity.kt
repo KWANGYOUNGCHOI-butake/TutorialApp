@@ -33,7 +33,7 @@ class KotlinActivity : AppCompatActivity() {
         val a2 = 20
         val max = if(a1 > a2) a1 else a2
         sb.appendln().append("if").appendln()
-        sb.append("a1 = 10, a2 = 20, max = " + max)
+        sb.append("a1 = 10, a2 = 20, max = " + max).appendln()
 
 
         val b1 = 10
@@ -79,7 +79,45 @@ class KotlinActivity : AppCompatActivity() {
         sb.appendln()
 
 
+        //수신 객체 람다 내부에서 수신 객체의 함수를 사용하지 않고 수신 객체 자신을 다시 반환 하려는 경우에 apply 사용
+        sb.appendln().append("apply").appendln()
+        val young = User().apply { name = "young"; age = 20 }
+        sb.append("name : " + young.name + " age : " + young.age).appendln()
+
+
+        //수신 객체 람다가 전달된 수신 객체를 전혀 사용 하지 않거나 수신 객체의 속성을 변경하지 않고 사용하는 경우 also 사용
+        sb.appendln().append("also").appendln()
+        young.also { sb.append("name : ").append(it.name).append(" age : ").append(it.age).appendln() }
+
+
+        //지정된 값이 null 이 아닌 경우에 코드를 실행해야 하는 경우.
+        //Nullable 객체를 다른 Nullable 객체로 변환하는 경우.
+        //단일 지역 변수의 범위를 제한 하는 경우.
+        sb.appendln().append("let").appendln()
+        var str: String? = null
+        str?.let { sb.append(str).appendln() }
+        str = "let sample"
+        str?.let { sb.append(str).appendln() }
+
+
+        //Non-nullable (Null 이 될수 없는) 수신 객체 이고 결과가 필요하지 않은 경우에만 with 사용
+        sb.appendln().append("with").appendln()
+        with(young) {
+            sb.append("name : ").append(name).append(" age : ").append(age).appendln()
+        }
+
+
+        //어떤 값을 계산할 필요가 있거나 여러개의 지역 변수의 범위를 제한하려면 run
+        sb.appendln().append("run").appendln()
+        young.run { sb.append("name : ").append(name).append(" age : ").append(age).appendln() }
+
 
         tv.text = sb.toString()
+    }
+
+    class User {
+        var name: String? = null
+        var age: Int? = null
+
     }
 }
