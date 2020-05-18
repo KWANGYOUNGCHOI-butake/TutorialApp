@@ -32,6 +32,10 @@ import com.kwang0.tutorialapp.javaE.stream.StreamSortedActivity;
 import com.kwang0.tutorialapp.language.LanguageActivity;
 import com.kwang0.tutorialapp.language.java.JavaActivity;
 import com.kwang0.tutorialapp.language.kotlin.KotlinActivity;
+import com.kwang0.tutorialapp.network.NetworkActivity;
+import com.kwang0.tutorialapp.network.okHttp.OkHttpActivity;
+import com.kwang0.tutorialapp.network.retrofit.RetrofitActivity;
+import com.kwang0.tutorialapp.network.volley.VolleyActivity;
 
 import java.util.List;
 
@@ -75,6 +79,9 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                             break;
                         case 3:
                             mContext.startActivity(new Intent(mContext, AsyncActivity.class));
+                            break;
+                        case 4:
+                            mContext.startActivity(new Intent(mContext, NetworkActivity.class));
                             break;
 
                     }
@@ -143,6 +150,18 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                             break;
                         case 2:
                             mContext.startActivity(new Intent(mContext, CoroutinesActivity.class));
+                            break;
+                    }
+                } else if(mContext instanceof NetworkActivity) {
+                    switch (position) {
+                        case 0:
+                            mContext.startActivity(new Intent(mContext, OkHttpActivity.class));
+                            break;
+                        case 1:
+                            mContext.startActivity(new Intent(mContext, VolleyActivity.class));
+                            break;
+                        case 2:
+                            mContext.startActivity(new Intent(mContext, RetrofitActivity.class));
                             break;
                     }
                 }

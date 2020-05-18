@@ -36,6 +36,7 @@ public class RxJavaActivity extends AppCompatActivity {
 
         ProgressDialog pd = new ProgressDialog(RxJavaActivity.this);
         pd.setText("잠시만 기다려주세요...");
+        pd.openProgressDialog();
 
         Disposable disposable = Observable.just(true)
                 .observeOn(Schedulers.computation())
@@ -52,7 +53,7 @@ public class RxJavaActivity extends AppCompatActivity {
                     }
                     pd.dismissProgressDialog();
                     Log.d("rxjava", "result : " + result);
-                    setTVText("Parsing & Download OK!!!");
+                    setTVText("Download OK!!!");
                 }, error ->{
                     setTVText("error!!");
                 });

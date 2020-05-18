@@ -56,7 +56,7 @@ public class AsyncTaskActivity extends AppCompatActivity implements AsyncTaskInt
                 }
             }
 
-            return "Parsing & Download OK!!!";
+            return "Download OK!!!";
         }
 
         @Override

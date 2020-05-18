@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".javaE.stream.StreamFilterMapActivity"></activity>
+        <activity android:name=".network.okHttp.OkHttpActivity"></activity>
+        <activity android:name=".network.retrofit.RetrofitActivity" />
+        <activity android:name=".network.volley.VolleyActivity" />
+        <activity android:name=".network.NetworkActivity" />
+        <activity android:name=".javaE.stream.StreamFilterMapActivity" />
         <activity android:name=".javaE.stream.StreamLimitSkipActivity" />
         <activity android:name=".javaE.stream.StreamDistinctActivity" />
         <activity android:name=".javaE.stream.StreamConcatActivity" />
