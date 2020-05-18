@@ -14,7 +14,7 @@ class KotlinActivity : AppCompatActivity() {
         val tv : TextView = findViewById(R.id.reuse_scroll_tv)
 
         val sb = StringBuilder()
-        sb.append("Hi, Kotlin!").appendln()
+        sb.append("Hello Kotlin").appendln()
 
 
         val e0: Int = 10000

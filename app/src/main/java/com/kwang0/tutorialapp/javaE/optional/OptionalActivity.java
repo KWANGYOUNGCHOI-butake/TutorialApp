@@ -24,6 +24,7 @@ public class OptionalActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.reuse_scroll_tv);
 
         StringBuilder sb = new StringBuilder();
+        sb.append("Hello Optional").append("\n");
 
 
         String str = "String in Optional";

@@ -18,7 +18,7 @@ public class JavaActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.reuse_scroll_tv);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("Hi, Java!").append("\n");
+        sb.append("Hello Java").append("\n");
 
         int a1 = 10, a2 = 20;
 //        int max = a1 > a2 ? a : a2;

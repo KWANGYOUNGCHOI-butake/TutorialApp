@@ -21,7 +21,14 @@ import com.kwang0.tutorialapp.designpattern.mvvm.MvvmActivity;
 import com.kwang0.tutorialapp.javaE.JavaEActivity;
 import com.kwang0.tutorialapp.javaE.optional.OptionalActivity;
 import com.kwang0.tutorialapp.javaE.stream.StreamCollectActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamConcatActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamDistinctActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamFilterMapActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamFindMatchActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamLimitSkipActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamMaxMinActivity;
 import com.kwang0.tutorialapp.javaE.stream.StreamReductionActivity;
+import com.kwang0.tutorialapp.javaE.stream.StreamSortedActivity;
 import com.kwang0.tutorialapp.language.LanguageActivity;
 import com.kwang0.tutorialapp.language.java.JavaActivity;
 import com.kwang0.tutorialapp.language.kotlin.KotlinActivity;
@@ -103,6 +110,27 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                             break;
                         case 2:
                             mContext.startActivity(new Intent(mContext, StreamReductionActivity.class));
+                            break;
+                        case 3:
+                            mContext.startActivity(new Intent(mContext, StreamFindMatchActivity.class));
+                            break;
+                        case 4:
+                            mContext.startActivity(new Intent(mContext, StreamMaxMinActivity.class));
+                            break;
+                        case 5:
+                            mContext.startActivity(new Intent(mContext, StreamSortedActivity.class));
+                            break;
+                        case 6:
+                            mContext.startActivity(new Intent(mContext, StreamConcatActivity.class));
+                            break;
+                        case 7:
+                            mContext.startActivity(new Intent(mContext, StreamDistinctActivity.class));
+                            break;
+                        case 8:
+                            mContext.startActivity(new Intent(mContext, StreamLimitSkipActivity.class));
+                            break;
+                        case 9:
+                            mContext.startActivity(new Intent(mContext, StreamFilterMapActivity.class));
                             break;
                     }
                 } else if(mContext instanceof AsyncActivity) {

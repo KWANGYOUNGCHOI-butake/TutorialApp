@@ -34,6 +34,13 @@ public class JavaEActivity extends AppCompatActivity {
         mList.add(new TitleModel("Optional"));
         mList.add(new TitleModel("Stream - collect"));
         mList.add(new TitleModel("Stream - reduction"));
+        mList.add(new TitleModel("Stream - find, match"));
+        mList.add(new TitleModel("Stream - max, min"));
+        mList.add(new TitleModel("Stream - sorted"));
+        mList.add(new TitleModel("Stream - concat"));
+        mList.add(new TitleModel("Stream - distinct"));
+        mList.add(new TitleModel("Stream - limit, skip"));
+        mList.add(new TitleModel("Stream - filter, map"));
         mAdapter.notifyDataSetChanged();
     }
 }

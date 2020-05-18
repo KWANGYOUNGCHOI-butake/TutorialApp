@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".javaE.stream.StreamFilterMapActivity"></activity>
+        <activity android:name=".javaE.stream.StreamLimitSkipActivity" />
+        <activity android:name=".javaE.stream.StreamDistinctActivity" />
+        <activity android:name=".javaE.stream.StreamConcatActivity" />
+        <activity android:name=".javaE.stream.StreamSortedActivity" />
+        <activity android:name=".javaE.stream.StreamMaxMinActivity" />
+        <activity android:name=".javaE.stream.StreamFindMatchActivity" />
         <activity android:name=".javaE.optional.OptionalActivity" />
-        <activity android:name=".javaE.stream.StreamCollectActivity"/>
+        <activity android:name=".javaE.stream.StreamCollectActivity" />
         <activity android:name=".javaE.stream.StreamReductionActivity" />
         <activity android:name=".async.coroutines.CoroutinesActivity" />
         <activity android:name=".async.asynctask.AsyncTaskActivity" />
