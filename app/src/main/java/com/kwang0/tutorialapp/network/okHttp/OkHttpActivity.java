@@ -31,8 +31,8 @@ public class OkHttpActivity extends AppCompatActivity {
 
     public String postUrl= POST_URL;
     public String postBody="{\n" +
-            "    \"name\": \"morpheus\",\n" +
-            "    \"job\": \"leader\"\n" +
+            "    \"name\": \"kwang0\",\n" +
+            "    \"job\": \"programmer\"\n" +
             "}";
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
@@ -61,14 +61,27 @@ public class OkHttpActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String...params) {
 
-            Request request = new Request.Builder()
+            String result = "";
+
+            Request getrequest = new Request.Builder()
+                    .url(postUrl)
+                    .build();
+
+            try {
+                Response response = client.newCall(getrequest).execute();
+                if(response.body() != null) result = response.body().string();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+            Request postrequest = new Request.Builder()
                     .url(postUrl)
                     .post(body)
                     .build();
 
             try {
-                Response response = client.newCall(request).execute();
-                if(response.body() != null) return response.body().string();
+                Response response = client.newCall(postrequest).execute();
+                if(response.body() != null) return result + "\n\n" + response.body().string();
             }catch (Exception e){
                 e.printStackTrace();
             }
