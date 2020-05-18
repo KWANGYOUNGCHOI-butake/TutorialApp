@@ -15,6 +15,8 @@ import java.util.List;
 
 public class NetworkActivity extends AppCompatActivity {
 
+    public static final String POST_URL = "https://reqres.in/api/users/2";
+
     private RecyclerView rv;
 
     private TitleView titleView;
@@ -31,7 +33,7 @@ public class NetworkActivity extends AppCompatActivity {
         List<TitleModel> mList = titleView.getmList();
         TitleAdapter mAdapter = titleView.getmAdapter();
 
-        mList.add(new TitleModel("OkHttp"));
+        mList.add(new TitleModel("OkHttp + AsyncTask"));
         mList.add(new TitleModel("Volley"));
         mList.add(new TitleModel("Retrofit"));
         mAdapter.notifyDataSetChanged();
