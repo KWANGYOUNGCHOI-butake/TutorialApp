@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -15,6 +16,7 @@ import java.util.function.Supplier;
 
 
 public class OptionalActivity extends AppCompatActivity {
+    public static final String TAG = OptionalActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

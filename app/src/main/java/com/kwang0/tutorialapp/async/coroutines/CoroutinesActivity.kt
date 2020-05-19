@@ -1,17 +1,18 @@
 package com.kwang0.tutorialapp.async.coroutines;
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.kwang0.tutorialapp.ProgressDialog
 import com.kwang0.tutorialapp.R
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 public class CoroutinesActivity: AppCompatActivity() {
+    val TAG = CoroutinesActivity::class.java.simpleName
 
     lateinit var tv: TextView
 

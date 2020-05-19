@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamCollectActivity extends AppCompatActivity {
+    public static final String TAG = StreamCollectActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

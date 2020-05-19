@@ -9,11 +9,13 @@ import com.kwang0.tutorialapp.R;
 import com.kwang0.tutorialapp.TitleAdapter;
 import com.kwang0.tutorialapp.TitleModel;
 import com.kwang0.tutorialapp.TitleView;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.language.LanguageActivity;
 
 import java.util.List;
 
 public class JavaEActivity extends AppCompatActivity {
+    public static final String TAG = JavaEActivity.class.getSimpleName();
 
     private RecyclerView rv;
 

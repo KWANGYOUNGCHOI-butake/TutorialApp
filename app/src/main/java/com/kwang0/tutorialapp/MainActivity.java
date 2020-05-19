@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,6 +23,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private RecyclerView rv;
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mList.add(new TitleModel("자바8"));
         mList.add(new TitleModel("비동기처리"));
         mList.add(new TitleModel("네트워크"));
+        mList.add(new TitleModel("데이터베이스"));
         mAdapter.notifyDataSetChanged();
     }
 

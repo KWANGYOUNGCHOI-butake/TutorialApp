@@ -12,10 +12,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.designpattern.DPModel;
 
 @SuppressLint("ClickableViewAccessibility")
 public class MvpActivity extends AppCompatActivity implements MvpView, View.OnClickListener, View.OnTouchListener {
+    public static final String TAG = MvpActivity.class.getSimpleName();
 
     private TextView tv;
     private Button start, stop, reset;

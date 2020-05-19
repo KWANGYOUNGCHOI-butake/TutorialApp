@@ -8,9 +8,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
+
 import java.util.Optional;
 
 public class ProgressDialog {
+    public static final String TAG = ProgressDialog.class.getSimpleName();
+
     private Context mContext;
 
     public ProgressDialog(Context mContext) {

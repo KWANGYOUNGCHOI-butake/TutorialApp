@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class StreamMaxMinActivity extends AppCompatActivity {
+    public static final String TAG = StreamMaxMinActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

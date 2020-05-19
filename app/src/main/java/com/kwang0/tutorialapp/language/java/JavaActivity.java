@@ -7,8 +7,10 @@ import android.text.SpannableString;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 public class JavaActivity extends AppCompatActivity {
+    public static final String TAG = JavaActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

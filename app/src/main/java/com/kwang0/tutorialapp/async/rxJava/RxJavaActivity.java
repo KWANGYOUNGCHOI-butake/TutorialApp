@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.kwang0.tutorialapp.ProgressDialog;
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +23,7 @@ import io.reactivex.schedulers.Schedulers;
 
 //ReactiveX Java
 public class RxJavaActivity extends AppCompatActivity {
+    public static final String TAG = RxJavaActivity.class.getSimpleName();
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     private TextView tv;

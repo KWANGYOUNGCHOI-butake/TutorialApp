@@ -11,7 +11,7 @@ import java.util.HashMap;
  */
 public class RepositoryProvider {
 
-    private static HashMap<Client, WeatherRepository> repositories;
+    private static HashMap<Client, UserRepository> repositories;
 
     public static void initialize(Context context) {
         repositories = new HashMap<>();
@@ -21,7 +21,7 @@ public class RepositoryProvider {
     }
 
     @Nullable
-    public static WeatherRepository provideWeatherRepository(Client client) {
+    public static UserRepository provideWeatherRepository(Client client) {
         return repositories.get(client);
     }
 
@@ -29,30 +29,25 @@ public class RepositoryProvider {
     public enum Client {
         Volley {
             @Override
-            public WeatherRepository createClient(Context context) {
-                return new WeatherRepositoryVolley(context);
+            public UserRepository createClient(Context context) {
+                return new UserRepositoryVolley(context);
             }
         },
         OkHttp3 {
             @Override
-            public WeatherRepository createClient(Context context) {
-                return new WeatherRepositoryOkHttp3();
+            public UserRepository createClient(Context context) {
+                return new UserRepositoryOkHttp3();
             }
         },
         Retrofit2 {
             @Override
-            public WeatherRepository createClient(Context context) {
-                return new WeatherRepositoryRetrofit2();
+            public UserRepository createClient(Context context) {
+                return new UserRepositoryRetrofit2();
             }
         },
         ;
 
-        public abstract WeatherRepository createClient(Context context);
-
-        @Override
-        public String toString() {
-            return name();
-        }
+        public abstract UserRepository createClient(Context context);
     }
 
 

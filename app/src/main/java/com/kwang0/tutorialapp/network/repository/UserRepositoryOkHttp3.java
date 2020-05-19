@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.kwang0.tutorialapp.network.entities.Weather;
+import com.kwang0.tutorialapp.network.entities.User;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,13 +16,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class WeatherRepositoryOkHttp3 implements WeatherRepository {
-    public static final String TAG = WeatherRepositoryOkHttp3.class.getSimpleName();
+public class UserRepositoryOkHttp3 implements UserRepository {
+    public static final String TAG = UserRepositoryOkHttp3.class.getSimpleName();
 
     private Handler handler = new Handler();
 
     @Override
-    public void getWeather(final RequestCallback callback) {
+    public void getUser(final RequestCallback callback) {
         final Request request = new Request.Builder()
                 .url(uri.toString())
                 .get()
@@ -33,11 +33,11 @@ public class WeatherRepositoryOkHttp3 implements WeatherRepository {
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 final String responseBody = response.body().string();
                 Log.d(TAG, "result: " + responseBody);
-                final Weather weather = new Gson().fromJson(responseBody, Weather.class);
+                final User user = new Gson().fromJson(responseBody, User.class);
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        callback.success(weather);
+                        callback.success(user);
                     }
                 });
             }

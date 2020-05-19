@@ -3,7 +3,7 @@ package com.kwang0.tutorialapp.network.repository;
 import android.net.Uri;
 import android.util.Log;
 
-import com.kwang0.tutorialapp.network.entities.Weather;
+import com.kwang0.tutorialapp.network.entities.User;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -14,12 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public class WeatherRepositoryRetrofit2 implements WeatherRepository {
-    public static final String TAG = WeatherRepositoryRetrofit2.class.getSimpleName();
+public class UserRepositoryRetrofit2 implements UserRepository {
+    public static final String TAG = UserRepositoryRetrofit2.class.getSimpleName();
 
     private final WeatherService service;
 
-    public WeatherRepositoryRetrofit2() {
+    public UserRepositoryRetrofit2() {
         final Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(new Uri.Builder().scheme(SCHEME).authority(AUTHORITY).build().toString())
                 .client(new OkHttpClient())
@@ -29,16 +29,16 @@ public class WeatherRepositoryRetrofit2 implements WeatherRepository {
     }
 
     @Override
-    public void getWeather(final RequestCallback callback) {
-        service.getWeather(130010).enqueue(new Callback<Weather>() {
+    public void getUser(final RequestCallback callback) {
+        service.getPage(2).enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Weather> call, Response<Weather> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 Log.d(TAG, "result: " + response.body().toString());
                 callback.success(response.body());
             }
 
             @Override
-            public void onFailure(Call<Weather> call, Throwable error) {
+            public void onFailure(Call<User> call, Throwable error) {
                 callback.error(error);
             }
         });
@@ -46,7 +46,7 @@ public class WeatherRepositoryRetrofit2 implements WeatherRepository {
 
     private interface WeatherService {
         @GET(PATH)
-        Call<Weather> getWeather(@Query("city") int city);
+        Call<User> getPage(@Query("page") int page);
     }
 
 }

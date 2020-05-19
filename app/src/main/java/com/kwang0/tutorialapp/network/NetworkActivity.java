@@ -1,7 +1,6 @@
 package com.kwang0.tutorialapp.network;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,17 +11,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
-import com.kwang0.tutorialapp.TitleAdapter;
-import com.kwang0.tutorialapp.TitleModel;
-import com.kwang0.tutorialapp.TitleView;
-import com.kwang0.tutorialapp.language.LanguageActivity;
-import com.kwang0.tutorialapp.network.entities.Weather;
+import com.kwang0.tutorialapp.network.entities.User;
 import com.kwang0.tutorialapp.network.repository.RepositoryProvider;
-import com.kwang0.tutorialapp.network.repository.WeatherRepository;
+import com.kwang0.tutorialapp.network.repository.UserRepository;
 
-import java.util.List;
-
-public class NetworkActivity extends AppCompatActivity implements WeatherRepository.RequestCallback {
+public class NetworkActivity extends AppCompatActivity implements UserRepository.RequestCallback {
+    public static final String TAG = NetworkActivity.class.getSimpleName();
 
     private TextView tv;
     private Spinner spi;
@@ -51,23 +45,23 @@ public class NetworkActivity extends AppCompatActivity implements WeatherReposit
             public void onClick(View v) {
                 tv.setText("Requesting...");
                 final RepositoryProvider.Client client = (RepositoryProvider.Client) spi.getSelectedItem();
-                final WeatherRepository repository = RepositoryProvider.provideWeatherRepository(client);
+                final UserRepository repository = RepositoryProvider.provideWeatherRepository(client);
                 assert repository != null;
                 startTimeMills = System.currentTimeMillis();
                 Log.d("request", "start: (" + startTimeMills + ")");
-                repository.getWeather(NetworkActivity.this);
+                repository.getUser(NetworkActivity.this);
                 btn.setEnabled(false);
             }
         });
     }
 
     @Override
-    public void success(Weather weather) {
+    public void success(User user) {
         long endTimeMillis = System.currentTimeMillis();
         Log.d("request", "success: (" + endTimeMillis + ")");
         Log.d("request", "time: (" + (endTimeMillis - startTimeMills) + ")");
-        String message = "success: ";
-        message += weather.toString();
+        String message = "success: (" + (endTimeMillis - startTimeMills) + ")";
+        message += user.toString();
         tv.setText(message);
         btn.setEnabled(true);
     }

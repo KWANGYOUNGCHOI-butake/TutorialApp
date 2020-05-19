@@ -11,12 +11,14 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.library.baseAdapters.BR;
 
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.designpattern.DPModel;
 
 import kotlin.jvm.JvmStatic;
 
 @SuppressLint("ClickableViewAccessibility")
 public class MvvmBindingAdapter {
+    public static final String TAG = MvvmBindingAdapter.class.getSimpleName();
 
     @BindingAdapter({"touchListener"})
     public static void setTouchListener(View self, View.OnTouchListener onTouchListener){

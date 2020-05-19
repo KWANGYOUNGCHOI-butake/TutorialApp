@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class StreamDistinctActivity extends AppCompatActivity {
+    public static final String TAG = StreamDistinctActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

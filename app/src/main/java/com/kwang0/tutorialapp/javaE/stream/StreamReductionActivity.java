@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 public class StreamReductionActivity extends AppCompatActivity {
+    public static final String TAG = StreamReductionActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

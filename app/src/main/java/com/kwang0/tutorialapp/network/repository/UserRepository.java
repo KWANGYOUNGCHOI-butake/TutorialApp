@@ -2,27 +2,28 @@ package com.kwang0.tutorialapp.network.repository;
 
 import android.net.Uri;
 
-import com.kwang0.tutorialapp.network.entities.Weather;
+import com.kwang0.tutorialapp.network.entities.User;
+
 
 // WeatherRepository.java
-public interface WeatherRepository {
+public interface UserRepository {
     // URL Const Vals
-    String SCHEME = "http";
-    String AUTHORITY = "weather.livedoor.com";
-    String PATH = "/forecast/webservice/json/v1";
+    String SCHEME = "https";
+    String AUTHORITY = "reqres.in";
+    String PATH = "/api/users";
     // URI
     Uri uri = new Uri.Builder()
             .scheme(SCHEME)
             .authority(AUTHORITY)
             .path(PATH)
-            .appendQueryParameter("city", "130010")
+            .appendQueryParameter("page", "2")
             .build();
 
-    void getWeather(RequestCallback callback);
+    void getUser(RequestCallback callback);
 
     interface RequestCallback {
         // 생성시의 Callback
-        void success(Weather weather);
+        void success(User user);
 
         // 실패시의 Callback
         void error(Throwable throwable);

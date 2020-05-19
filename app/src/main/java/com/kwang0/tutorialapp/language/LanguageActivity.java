@@ -12,12 +12,14 @@ import com.kwang0.tutorialapp.R;
 import com.kwang0.tutorialapp.TitleAdapter;
 import com.kwang0.tutorialapp.TitleModel;
 import com.kwang0.tutorialapp.TitleView;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class LanguageActivity extends AppCompatActivity {
+    public static final String TAG = LanguageActivity.class.getSimpleName();
 
     private RecyclerView rv;
 

@@ -7,11 +7,13 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.databinding.ActivityMvvmBinding;
 
 import kotlin.jvm.JvmStatic;
 
 public class MvvmActivity extends AppCompatActivity {
+    public static final String TAG = MvvmActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

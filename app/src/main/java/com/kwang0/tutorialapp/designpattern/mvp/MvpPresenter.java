@@ -2,9 +2,11 @@ package com.kwang0.tutorialapp.designpattern.mvp;
 
 import android.view.MotionEvent;
 
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.designpattern.DPModel;
 
 public class MvpPresenter implements Presenter {
+    public static final String TAG = MvpPresenter.class.getSimpleName();
 
     private MvpView view;
     private DPModel model;

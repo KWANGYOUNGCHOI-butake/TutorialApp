@@ -17,10 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.designpattern.DPModel;
 
 @SuppressLint("ClickableViewAccessibility")
 public class MvcActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
+    public static final String TAG = MvcActivity.class.getSimpleName();
 
     private DPModel model;
 

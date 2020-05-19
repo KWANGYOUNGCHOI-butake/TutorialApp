@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import com.kwang0.tutorialapp.ProgressDialog;
 import com.kwang0.tutorialapp.R;
+import com.kwang0.tutorialapp.database.realm.RealmActivity;
 
 public class AsyncTaskActivity extends AppCompatActivity implements AsyncTaskInterface {
+    public static final String TAG = AsyncTaskActivity.class.getSimpleName();
 
     private TextView tv;
 

@@ -7,6 +7,18 @@
     android:orientation="vertical"
     tools:context=".network.NetworkActivity">
 
+    <Spinner
+        android:id="@+id/network_spi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/bigPadding"/>
+
+    <Button
+        android:id="@+id/network_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REQUEST" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,16 +33,5 @@
             android:text="Chose client and Push REQUEST Button" />
 
     </ScrollView>
-
-    <Spinner
-        android:id="@+id/network_spi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/network_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="REQUEST" />
 
 </LinearLayout>

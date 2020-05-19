@@ -11,6 +11,7 @@ import com.kwang0.tutorialapp.R;
 import com.kwang0.tutorialapp.TitleAdapter;
 import com.kwang0.tutorialapp.TitleModel;
 import com.kwang0.tutorialapp.TitleView;
+import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.javaE.JavaEActivity;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class DPActivity extends AppCompatActivity {
+    public static final String TAG = DPActivity.class.getSimpleName();
 
     private RecyclerView rv;
 
