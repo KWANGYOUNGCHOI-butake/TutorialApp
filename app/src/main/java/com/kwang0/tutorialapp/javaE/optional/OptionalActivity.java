@@ -99,6 +99,7 @@ public class OptionalActivity extends AppCompatActivity {
         }
 
 
+        
         Optional<String> opStr1 = Optional.of("Optional Str");
         Optional<String> opStr2 = Optional.of("Optional String");
         Optional<String> filterOpStr1 = opStr1.filter(s -> s.contains("String"));

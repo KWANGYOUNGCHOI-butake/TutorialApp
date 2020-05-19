@@ -37,39 +37,45 @@ public class StreamCollectActivity extends AppCompatActivity {
 
 
         sb.append("\n").append("hashset").append("\n");
-        HashSet<String> fruitHashSet = fruits.collect(HashSet::new, HashSet::add, HashSet::addAll);
-        for (String s : fruitHashSet) {
-            sb.append(s);
-        }
+        fruits.collect(HashSet::new, HashSet::add, HashSet::addAll).forEach(sb::append);
         sb.append("\n");
 
+
+        Stream<String> fruits2 = Stream.of("banana", "apple", "mango", "kiwi", "peach", "cherry", "lemon");
 
         sb.append("\n").append("set").append("\n");
-        Set<String> fruitHashSet2 = fruits.collect(Collectors.toSet());
-        for (String s : fruitHashSet2) {
+        Set<String> fruitSet2 = fruits2.collect(Collectors.toSet());
+        for (String s : fruitSet2) {
             sb.append(s);
         }
         sb.append("\n");
 
 
+        Stream<String> fruits3 = Stream.of("banana", "apple", "mango", "kiwi", "peach", "cherry", "lemon");
+
         sb.append("\n").append("list").append("\n");
-        List<String> fruitList = fruits.collect(Collectors.toList());
+        List<String> fruitList = fruits3.collect(Collectors.toList());
         for (String s : fruitList) {
             sb.append(s);
         }
         sb.append("\n");
 
 
+        Stream<String> fruits4 = Stream.of("banana", "apple", "mango", "kiwi", "peach", "cherry", "lemon");
+        Stream<String> fruits5 = Stream.of("banana", "apple", "mango", "kiwi", "peach", "cherry", "lemon");
+
         sb.append("\n").append("joining").append("\n");
-        String fruitStr = fruits.collect(Collectors.joining());
+        String fruitStr = fruits4.collect(Collectors.joining());
         sb.append(fruitStr).append("\n");
-        fruitStr = fruits.collect(Collectors.joining(", "));
+        fruitStr = fruits5.collect(Collectors.joining(", ", "< ", " >"));
         sb.append(fruitStr).append("\n");
 
+
+        Stream<String> fruits6 = Stream.of("banana", "apple", "mango", "kiwi", "peach", "cherry", "lemon");
 
         sb.append("\n").append("max").append("\n");
-        Function<String, Integer> getCount = fruit-> fruit.length();
-        Optional<String> resultMax = fruits.map(Object::toString).collect(Collectors.maxBy(Comparator.comparing(getCount)));
+        Function<String, Integer> getCount = String::length;
+        Optional<String> resultMax = fruits6.map(Object::toString).collect(Collectors.maxBy(Comparator.comparing(getCount)));
         sb.append("result: ").append(resultMax.orElse("no item")).append("\n");
 
 
@@ -78,20 +84,23 @@ public class StreamCollectActivity extends AppCompatActivity {
         Double resultAvr = list.stream().collect(Collectors.averagingInt(v -> v * 2));
         sb.append("Average: ").append(resultAvr).append("\n");
 
-
         sb.append("\n").append("custom").append("\n");
-        Stream<Fruit> fruits2 = Stream.of(new Fruit("1", "banana"), new Fruit("2", "apple"),
+        Stream<Fruit> fruits7 = Stream.of(new Fruit("1", "banana"), new Fruit("2", "apple"),
                 new Fruit("3", "mango"), new Fruit("4", "kiwi"),
                 new Fruit("5", "peach"), new Fruit("6", "cherry"),
                 new Fruit("7", "lemon"));
-        Map<String, String> map = fruits2.collect(Collectors.toMap(Fruit::getId, Fruit::getName));
+        Map<String, String> map = fruits7.collect(Collectors.toMap(Fruit::getId, Fruit::getName));
         for (String key : map.keySet()) {
             sb.append("key : ").append(key).append(" value : ").append(map.get(key)).append("\n");
         }
 
 
         sb.append("\n").append("custom - repeat").append("\n");
-        map = fruits2.collect(
+        Stream<Fruit> fruits8 = Stream.of(new Fruit("1", "banana"), new Fruit("2", "apple"),
+                new Fruit("3", "mango"), new Fruit("4", "kiwi"),
+                new Fruit("5", "peach"), new Fruit("6", "cherry"),
+                new Fruit("5", "lemon"));
+        map = fruits8.collect(
                 //item -> item.getId() = Fruit::getId
                 Collectors.toMap(item -> item.getId(), item -> item.getName(),
                         (existFruit, newFruit) -> existFruit + ", " + newFruit));

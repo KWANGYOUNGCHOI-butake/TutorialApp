@@ -35,22 +35,26 @@ public class StreamReductionActivity extends AppCompatActivity {
 
 
         sb.append("\n").append("sum - init").append("\n");
-        Integer sum2 = numbers.reduce(10, (x, y) -> x + y);
+        Stream<Integer> numbers1 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum2 = numbers1.reduce(10, (x, y) -> x + y);
         sb.append("sum : ").append(sum2);
 
 
         sb.append("\n").append("sum - parallel").append("\n");
-        Integer sum3 = numbers.parallel().reduce(0, (x, y) -> x + y);
+        Stream<Integer> numbers2 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum3 = numbers2.parallel().reduce(0, (x, y) -> x + y);
         sb.append("sum : ").append(sum3);
 
 
         sb.append("\n").append("sum - parallel minus").append("\n");
-        Integer sum4= numbers.parallel().reduce(0, (x, y) -> x - y);
+        Stream<Integer> numbers3 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum4= numbers3.parallel().reduce(0, (x, y) -> x - y);
         sb.append("sum : ").append(sum4);
 
 
         sb.append("\n").append("sum - parallel minus order").append("\n");
-        Integer sum5 = numbers.reduce(0,
+        Stream<Integer> numbers4 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Integer sum5 = numbers4.reduce(0,
                 (x, y) -> x - y,
                 (r1, r2) -> r1 + r2);
         sb.append("sum : ").append(sum5);

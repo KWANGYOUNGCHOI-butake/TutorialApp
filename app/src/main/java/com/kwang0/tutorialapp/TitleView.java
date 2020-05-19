@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.SimpleItemAnimator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class TitleView {
 
@@ -35,7 +36,7 @@ public class TitleView {
         mList = new ArrayList<TitleModel>();
         mAdapter = new TitleAdapter(mContext, mList);
         rv.setHasFixedSize(true);
-        ((SimpleItemAnimator) Objects.requireNonNull(rv.getItemAnimator())).setSupportsChangeAnimations(false);
+        Optional.ofNullable((SimpleItemAnimator) (rv.getItemAnimator())).get().setSupportsChangeAnimations(false);
         rv.setNestedScrollingEnabled(false);
         rv.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false));
         rv.setAdapter(mAdapter);

@@ -41,6 +41,7 @@ public class StreamSortedActivity extends AppCompatActivity {
 
         sb.append("\n").append("sort - length").append("\n");
         langs.stream().sorted(Comparator.comparing(String::length))
+//                .thenComparing((s1, s2) -> s2.compareToIgnoreCase(s1)))
                 .forEach(s -> sb.append("sorted : ").append(s).append("\n"));
 
         sb.append("\n").append("sort - length reverse").append("\n");
@@ -58,10 +59,11 @@ public class StreamSortedActivity extends AppCompatActivity {
                 .forEach(s -> sb.append("reversed : ").append(s).append("\n"));
 
 
+        sb.append("\n").append("sort - custom").append("\n");
         List<CustomString> csList = Arrays.asList(new CustomString("java"), new CustomString("kotlin"),
                 new CustomString("haskell"), new CustomString("ruby"), new CustomString("javascript"));
         csList.stream().sorted()
-                .forEach(s -> sb.append("sorted : ").append(s).append("\n"));
+                .forEach(cs -> sb.append("sorted : ").append(cs.getStr()).append("\n"));
 
 
         tv.setText(sb.toString());
@@ -80,5 +82,8 @@ public class StreamSortedActivity extends AppCompatActivity {
             return Integer.compare(this.str.length(), o.str.length());
         }
 
+        public String getStr() {
+            return str;
+        }
     }
 }
