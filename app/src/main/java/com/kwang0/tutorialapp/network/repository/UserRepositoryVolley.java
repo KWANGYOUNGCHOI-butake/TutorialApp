@@ -9,7 +9,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.kwang0.tutorialapp.network.entities.User;
+import com.kwang0.tutorialapp.network.entity.User;
 
 import org.json.JSONObject;
 

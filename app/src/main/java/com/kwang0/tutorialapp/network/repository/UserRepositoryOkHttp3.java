@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.kwang0.tutorialapp.network.entities.User;
+import com.kwang0.tutorialapp.network.entity.User;
 
 import org.jetbrains.annotations.NotNull;
 

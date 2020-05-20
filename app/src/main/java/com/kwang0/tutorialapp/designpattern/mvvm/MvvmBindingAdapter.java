@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.BindingAdapter;
-import androidx.databinding.library.baseAdapters.BR;
 
 import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.designpattern.DPModel;

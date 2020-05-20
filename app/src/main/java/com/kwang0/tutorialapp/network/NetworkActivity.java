@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.kwang0.tutorialapp.R;
-import com.kwang0.tutorialapp.network.entities.User;
+import com.kwang0.tutorialapp.network.entity.User;
 import com.kwang0.tutorialapp.network.repository.RepositoryProvider;
 import com.kwang0.tutorialapp.network.repository.UserRepository;
 

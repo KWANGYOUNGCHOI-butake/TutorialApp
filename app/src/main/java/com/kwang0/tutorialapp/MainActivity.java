@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mList.add(new TitleModel("자바8"));
         mList.add(new TitleModel("비동기처리"));
         mList.add(new TitleModel("네트워크"));
+        mList.add(new TitleModel("웹소켓"));
         mList.add(new TitleModel("데이터베이스"));
         mAdapter.notifyDataSetChanged();
     }

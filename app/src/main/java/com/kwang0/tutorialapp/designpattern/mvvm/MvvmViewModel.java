@@ -7,15 +7,11 @@ import android.view.View;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.*;
+import androidx.databinding.library.baseAdapters.BR;
 
-import com.kwang0.tutorialapp.BR;
-import com.kwang0.tutorialapp.R;
-import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
-import com.kwang0.tutorialapp.databinding.ActivityMvvmBinding;
 import com.kwang0.tutorialapp.designpattern.DPModel;
-import com.kwang0.tutorialapp.designpattern.mvp.MvpView;
 
-import kotlin.jvm.JvmStatic;
 
 @SuppressLint("ClickableViewAccessibility")
 public class MvvmViewModel extends BaseObservable implements ViewModel {

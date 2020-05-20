@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".database.sqlite.SQLiteActivity"/>
-        <activity android:name=".database.realm.RealmActivity" />
+        <activity android:name=".network.WebSocketActivity"/>
+        <activity android:name=".database.room.ui.RoomActivity" />
         <activity android:name=".database.DatabaseActivity" />
         <activity android:name=".network.NetworkActivity" />
         <activity android:name=".javaE.stream.StreamFilterMapActivity" />

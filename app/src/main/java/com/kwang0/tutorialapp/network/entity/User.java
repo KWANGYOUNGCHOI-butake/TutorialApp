@@ -1,4 +1,4 @@
-package com.kwang0.tutorialapp.network.entities;
+package com.kwang0.tutorialapp.network.entity;
 
 import org.jetbrains.annotations.NotNull;
 

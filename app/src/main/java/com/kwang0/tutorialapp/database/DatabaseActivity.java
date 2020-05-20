@@ -33,8 +33,8 @@ public class DatabaseActivity extends AppCompatActivity {
         List<TitleModel> mList = titleView.getmList();
         TitleAdapter mAdapter = titleView.getmAdapter();
 
-        mList.add(new TitleModel("SQLite"));
-        mList.add(new TitleModel("Realm"));
+        mList.add(new TitleModel("Room"));
+//        mList.add(new TitleModel("Realm"));
         mAdapter.notifyDataSetChanged();
     }
 }

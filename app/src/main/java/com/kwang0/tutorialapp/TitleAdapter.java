@@ -15,8 +15,7 @@ import com.kwang0.tutorialapp.async.asynctask.AsyncTaskActivity;
 import com.kwang0.tutorialapp.async.coroutines.CoroutinesActivity;
 import com.kwang0.tutorialapp.async.rxJava.RxJavaActivity;
 import com.kwang0.tutorialapp.database.DatabaseActivity;
-import com.kwang0.tutorialapp.database.realm.RealmActivity;
-import com.kwang0.tutorialapp.database.sqlite.SQLiteActivity;
+import com.kwang0.tutorialapp.database.room.ui.RoomActivity;
 import com.kwang0.tutorialapp.designpattern.DPActivity;
 import com.kwang0.tutorialapp.designpattern.mvc.MvcActivity;
 import com.kwang0.tutorialapp.designpattern.mvp.MvpActivity;
@@ -36,6 +35,7 @@ import com.kwang0.tutorialapp.language.LanguageActivity;
 import com.kwang0.tutorialapp.language.java.JavaActivity;
 import com.kwang0.tutorialapp.language.kotlin.KotlinActivity;
 import com.kwang0.tutorialapp.network.NetworkActivity;
+import com.kwang0.tutorialapp.network.WebSocketActivity;
 
 import java.util.List;
 
@@ -85,6 +85,9 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                             mContext.startActivity(new Intent(mContext, NetworkActivity.class));
                             break;
                         case 5:
+                            mContext.startActivity(new Intent(mContext, WebSocketActivity.class));
+                            break;
+                        case 6:
                             mContext.startActivity(new Intent(mContext, DatabaseActivity.class));
                             break;
 
@@ -159,10 +162,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.ViewHolder> 
                 } else if(mContext instanceof DatabaseActivity) {
                     switch (position) {
                         case 0:
-                            mContext.startActivity(new Intent(mContext, SQLiteActivity.class));
-                            break;
-                        case 1:
-                            mContext.startActivity(new Intent(mContext, RealmActivity.class));
+                            mContext.startActivity(new Intent(mContext, RoomActivity.class));
                             break;
                     }
                 }

@@ -3,7 +3,7 @@ package com.kwang0.tutorialapp.network.repository;
 import android.net.Uri;
 import android.util.Log;
 
-import com.kwang0.tutorialapp.network.entities.User;
+import com.kwang0.tutorialapp.network.entity.User;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;

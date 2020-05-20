@@ -2,7 +2,7 @@ package com.kwang0.tutorialapp.network.repository;
 
 import android.net.Uri;
 
-import com.kwang0.tutorialapp.network.entities.User;
+import com.kwang0.tutorialapp.network.entity.User;
 
 
 // WeatherRepository.java
