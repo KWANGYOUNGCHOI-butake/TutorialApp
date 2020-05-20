@@ -31,9 +31,9 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
 
-        mUserName = findViewById(R.id.sqlite_user_name);
-        mUserNameInput = findViewById(R.id.sqlite_user_name_input);
-        mUpdateButton = findViewById(R.id.sqlite_update_user);
+        mUserName = findViewById(R.id.room_user_name);
+        mUserNameInput = findViewById(R.id.room_user_name_input);
+        mUpdateButton = findViewById(R.id.room_update_user);
 
         mViewModelFactory = Injection.provideViewModelFactory(this);
         mViewModel = new ViewModelProvider(this, mViewModelFactory).get(UserViewModel.class);
