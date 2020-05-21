@@ -6,26 +6,27 @@ import io.reactivex.Completable;
 import io.reactivex.Flowable;
 
 /**
- * Access point for managing user data.
+ * user 데이터를 관리하기 위한 접근 포인트
  */
 public interface UserDataSource {
 
     /**
-     * Gets the user from the data source.
+     * data에 source 에서 user 데이터를 가져옴
      *
-     * @return the user from the data source.
+     * @return User
      */
     Flowable<User> getUser();
 
     /**
-     * Inserts the user into the data source, or, if this is an existing user, updates it.
+     * data source 에 user 를 집어넣음,
+     * 만약 user 가 존재한다면 업데이트 시킴
      *
-     * @param user the user to be inserted or updated.
+     * @param user
      */
     Completable insertOrUpdateUser(User user);
 
     /**
-     * Deletes all users from the data source.
+     * data source 의 모든 유저를 지움
      */
     void deleteAllUsers();
 }

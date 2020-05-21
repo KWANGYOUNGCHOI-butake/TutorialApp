@@ -22,7 +22,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(UserViewModel.class)) {
             return (T) new UserViewModel(mDataSource);
         }
-        //noinspection unchecked
         throw new IllegalArgumentException("Unknown ViewModel class");
     }
 }

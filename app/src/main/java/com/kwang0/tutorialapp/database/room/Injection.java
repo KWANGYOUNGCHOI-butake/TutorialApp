@@ -11,7 +11,7 @@ import com.kwang0.tutorialapp.database.room.ui.ViewModelFactory;
  */
 public class Injection {
 
-    public static UserDataSource provideUserDataSource(Context context) {
+    private static UserDataSource provideUserDataSource(Context context) {
         UsersDatabase database = UsersDatabase.getInstance(context);
         return new LocalUserDataSource(database.userDao());
     }
