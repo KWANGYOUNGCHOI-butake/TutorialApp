@@ -25,16 +25,12 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    private RecyclerView rv;
-
-    private TitleView titleView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        titleView = new TitleView(MainActivity.this);
+        TitleView titleView = new TitleView(MainActivity.this);
         titleView.bindView(MainActivity.this);
         titleView.recyclerInit();
 
