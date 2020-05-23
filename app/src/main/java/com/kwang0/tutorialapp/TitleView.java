@@ -40,6 +40,7 @@ public class TitleView {
         rv.setNestedScrollingEnabled(false);
         rv.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.VERTICAL, false));
         rv.setAdapter(mAdapter);
+
     }
 
     public List<TitleModel> getmList() {
