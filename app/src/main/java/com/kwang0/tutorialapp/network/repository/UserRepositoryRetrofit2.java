@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 public class UserRepositoryRetrofit2 implements UserRepository {
     public static final String TAG = UserRepositoryRetrofit2.class.getSimpleName();
 
-    private final WeatherService service;
+    private final UserService service;
 
     public UserRepositoryRetrofit2() {
         final Retrofit retrofit = new Retrofit.Builder()
@@ -25,7 +25,7 @@ public class UserRepositoryRetrofit2 implements UserRepository {
                 .client(new OkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        service = retrofit.create(WeatherService.class);
+        service = retrofit.create(UserService.class);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class UserRepositoryRetrofit2 implements UserRepository {
         });
     }
 
-    private interface WeatherService {
+    private interface UserService {
         @GET(PATH)
         Call<User> getPage(@Query("page") int page);
     }
