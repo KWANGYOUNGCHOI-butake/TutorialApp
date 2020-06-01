@@ -11,13 +11,13 @@ public class MvpPresenter implements Presenter {
     private MvpView view;
     private DPModel model;
 
-    public MvpPresenter(MvpView view) {
+    MvpPresenter(MvpView view) {
         this.view = view;
         this.model = new DPModel();
     }
 
-    // Here we implement delegate methods for the standard Android Activity Lifecycle.
-    // These methods are defined in the Presenter interface that we are implementing.
+    // 라이프 사이클
+
     public void onCreate() {
         model = new DPModel();
         view.startVISIBLE();
@@ -27,17 +27,21 @@ public class MvpPresenter implements Presenter {
     public void onResume() { }
     public void onDestroy() { }
 
+    // 사각형 이동 관련 함수
+
     @Override
     public void start() {
         view.getCenter();
         model.start();
         view.stopVISIBLE();
     }
+
     @Override
     public void stop() {
         model.stop();
         view.startVISIBLE();
     }
+
     @Override
     public void reset(int centerX, int centerY) {
         if(!model.isFinished()) {

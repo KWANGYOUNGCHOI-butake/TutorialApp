@@ -116,9 +116,6 @@ public class MvcActivity extends AppCompatActivity implements View.OnClickListen
     }
     private void moveCenter() {
         model.move(centerX, centerY);
-
-        Log.d("work??", "x : " + centerX);
-        Log.d("work??", "y : " + centerY);
         moveSquare();
     }
 

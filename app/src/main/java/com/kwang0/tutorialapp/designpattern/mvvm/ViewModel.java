@@ -6,5 +6,4 @@ public interface ViewModel {
     void start(View view);
     void stop();
     void reset();
-
 }

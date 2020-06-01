@@ -30,8 +30,6 @@ public class MvvmViewModel extends BaseObservable implements ViewModel {
         this.squareParams = new SquareParams(-1, -1, -1, -1);
     }
 
-    // Here we implement delegate methods for the standard Android Activity Lifecycle.
-    // These methods are defined in the Presenter interface that we are implementing.
     public void onCreate() { }
     public void onPause() { }
     public void onResume() { }

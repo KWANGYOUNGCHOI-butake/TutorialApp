@@ -46,7 +46,6 @@ public class WebSocketActivity extends AppCompatActivity {
         EchoWebSocketListener listener = new EchoWebSocketListener();
         // OkHttpClient 로 웹소켓 연결
         WebSocket ws = client.newWebSocket(request, listener);
-
         client.dispatcher().executorService().shutdown();
     }
 

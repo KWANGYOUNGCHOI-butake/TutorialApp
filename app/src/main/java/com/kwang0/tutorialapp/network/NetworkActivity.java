@@ -31,9 +31,9 @@ public class NetworkActivity extends AppCompatActivity implements UserRepository
 
         RepositoryProvider.initialize(this);
 
-        tv = (TextView) findViewById(R.id.network_tv);
         spi = (Spinner) findViewById(R.id.network_spi);
         btn = (Button) findViewById(R.id.network_btn);
+        tv = (TextView) findViewById(R.id.network_tv);
 
         final ArrayAdapter<RepositoryProvider.Client> adapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, RepositoryProvider.Client.values());
