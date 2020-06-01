@@ -44,6 +44,7 @@ public class WebSocketActivity extends AppCompatActivity {
     private void startConnect() {
         Request request = new Request.Builder().url("ws://echo.websocket.org").build();
         EchoWebSocketListener listener = new EchoWebSocketListener();
+        // OkHttpClient 로 웹소켓 연결
         WebSocket ws = client.newWebSocket(request, listener);
 
         client.dispatcher().executorService().shutdown();
