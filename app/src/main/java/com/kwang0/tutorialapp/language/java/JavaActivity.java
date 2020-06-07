@@ -87,6 +87,18 @@ public class JavaActivity extends AppCompatActivity {
         }
 
 
+        sb.append("\n").append("when - switch").append("\n");
+        int wx = 1;
+        sb.append("wx == 1, when wx -> 1 one. wx == 2, wx -> 2 print two").append("\n");
+        switch (wx) {
+            case 1:
+                sb.append("wx -> 1 one");
+            case 2:
+                sb.append("wx -> 2 two");
+            default:
+                sb.append("wx is not one or two");
+        }
+
 
         tv.setText(sb.toString());
     }

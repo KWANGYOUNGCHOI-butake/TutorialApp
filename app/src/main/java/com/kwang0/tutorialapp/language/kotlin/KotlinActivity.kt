@@ -114,6 +114,27 @@ class KotlinActivity : AppCompatActivity() {
         young.run { sb.append("name : ").append(name).append(" age : ").append(age).appendln() }
 
 
+        //java 의 switch 구문 -> kotlin when 으로 사용
+        sb.appendln().append("when - switch").appendln()
+        val wx = 1
+        sb.append("wx == 1, when wx -> 1 one. wx == 2, wx -> 2 print two").appendln()
+        when(wx) {
+            1 -> sb.append("wx -> 1 one")
+            2 -> sb.append("wx -> 2 two")
+            else -> sb.append("wx is not one or two")
+        }
+
+
+        //java 의 if,else 구문 -> kotlin when 으로 사용
+        sb.appendln().append("when - if,else").appendln()
+        sb.append("wx == 1, when wx -> 1 one. wx == 2, wx -> 2 print two").appendln()
+        when {
+            wx == 1 -> sb.append("wx -> 1 one")
+            wx == 2 -> sb.append("wx -> 2 two")
+            else -> sb.append("wx is not one or two")
+        }
+
+        
         tv.text = sb.toString()
     }
 
