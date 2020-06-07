@@ -134,7 +134,7 @@ class KotlinActivity : AppCompatActivity() {
             else -> sb.append("wx is not one or two")
         }
 
-        
+
         tv.text = sb.toString()
     }
 
