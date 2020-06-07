@@ -75,7 +75,8 @@ public class StreamCollectActivity extends AppCompatActivity {
 
         sb.append("\n").append("max").append("\n");
         Function<String, Integer> getCount = String::length;
-        Optional<String> resultMax = fruits6.map(Object::toString).collect(Collectors.maxBy(Comparator.comparing(getCount)));
+        Optional<String> resultMax = fruits6.map(Object::toString).max(Comparator.comparing(getCount));
+//        Optional<String> resultMax = fruits6.map(Object::toString).collect(Collectors.maxBy(Comparator.comparing(getCount)));
         sb.append("result: ").append(resultMax.orElse("no item")).append("\n");
 
 

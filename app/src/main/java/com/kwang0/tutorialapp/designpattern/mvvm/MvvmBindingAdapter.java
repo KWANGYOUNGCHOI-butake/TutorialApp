@@ -16,7 +16,7 @@ import com.kwang0.tutorialapp.designpattern.DPModel;
 import kotlin.jvm.JvmStatic;
 
 @SuppressLint("ClickableViewAccessibility")
-public class MvvmBindingAdapter {
+class MvvmBindingAdapter {
     public static final String TAG = MvvmBindingAdapter.class.getSimpleName();
 
     @BindingAdapter({"touchListener"})
